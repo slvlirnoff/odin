@@ -1,0 +1,997 @@
+{
+  "posix_locale": "fr_FR.utf8",
+  "instructions": {
+    "start": {
+      "phrases": {
+        "0": "Se diriger en direction <CARDINAL_DIRECTION>.",
+        "1": "Se diriger en direction <CARDINAL_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Se diriger en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "4": "Conduire en direction <CARDINAL_DIRECTION>.",
+        "5": "Conduire en direction <CARDINAL_DIRECTION> sur <STREET_NAMES>.",
+        "6": "Conduire en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "8": "Marchez en direction <CARDINAL_DIRECTION>.",
+        "9": "Marchez en direction <CARDINAL_DIRECTION> sur <STREET_NAMES>.",
+        "10": "Marchez en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "16": "Roulez en direction <CARDINAL_DIRECTION>.",
+        "17": "Roulez en direction <CARDINAL_DIRECTION> sur <STREET_NAMES>.",
+        "18": "Roulez en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>."
+      },
+      "cardinal_directions": ["du nord", "du nord-est", "de l'est", "du sud-est", "du sud", "du sud-ouest", "de l'ouest", "du nord-ouest"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Se diriger en direction de l'est.", "Se diriger en direction du nord."],
+        "1": ["Se diriger en direction du sud-ouest sur 5th Avenue.", "Se diriger en direction de l'ouest sur la passerelle.", "Se dirirger en direction de l'est sur la piste cyclable.", "Se diriger en direction du nord sur la piste de vtt."],
+        "2": ["Se diriger en direction du nord sur North Prince Street/US 222/PA 272. Continuer sur US 222/PA 272."],
+        "4": ["Conduire en direction de l'est.", "Conduire en direction du nord."],
+        "5": ["Conduire en direction du sud-ouest sur 5th Avenue."],
+        "6": ["Conduire en direction du sud sur North Prince Street/US 222/PA 272. Continuer sur US 222/PA 272."],
+        "8": ["Marcher en direction de l'est.", "Marcher en direction du nord."],
+        "9": ["Marcher en direction du sud-ouest sur 5th Avenue.", "Marcher en direction de l'ouest sur la passerelle."],
+        "10": ["Marcher en durection du sud sur North Prince Street/US 222/PA 272. Continuer sur US 222/PA 272."],
+        "16": ["Rouler en direction de l'est.", "Rouler en direction du nord."],
+        "17": ["Rouler en direction du sud-ouest sur 5th Avenue.", "Rouler en direction de l'est sur la passerelle", "Rouler en direction du nord sur la piste de vtt."],
+        "18": ["Rouler en direction du sud sur North Prince Street/US 222/PA 272. Continuer sur US 222/PA 272."]
+      }
+    },
+    "start_verbal": {
+      "phrases": {
+        "0": "Se diriger en direction <CARDINAL_DIRECTION> pendant <LENGTH>.",
+        "1": "Se diriger en direction <CARDINAL_DIRECTION> sur <STREET_NAMES> pendant <LENGTH>.",
+        "2": "Se diriger en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>.",
+        "4": "Se diriger en direction <CARDINAL_DIRECTION> pendant <LENGTH>.",
+        "5": "Se diriger en direction <CARDINAL_DIRECTION> sur <STREET_NAMES> pendant <LENGTH>.",
+        "6": "Conduire en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>.",
+        "8": "Marcher en direction <CARDINAL_DIRECTION> pendant <LENGTH>.",
+        "9": "Marcher en direction <CARDINAL_DIRECTION> sur <STREET_NAMES> pendant <LENGTH>.",
+        "10": "Marcher en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>.",
+        "16": "Rouler en direction <CARDINAL_DIRECTION> pendant <LENGTH>.",
+        "17": "Rouler en direction <CARDINAL_DIRECTION> sur <STREET_NAMES> pendant <LENGTH>.",
+        "18": "Rouler en direction <CARDINAL_DIRECTION> sur <BEGIN_STREET_NAMES>."
+      },
+      "cardinal_directions": ["du nord", "du nord-est", "de l'est", "du sud-est", "du sud", "du sud-ouest", "de l'ouest", "du nord-ouest"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "metric_lengths": ["<KILOMETERS> kilomètres", "un kilomètre", "500 mètres", "<METERS> mètres", "moins de 10 mètres"],
+      "us_customary_lengths": ["<MILES> milles", "un mille", "un demi-mille", "<TENTHS_OF_MILE> dixièmes de mille", "1 dixième de mille", "<FEET> pieds", "moins de dix pieds"],
+      "example_phrases": {
+        "0": ["Se diriger en direction de l'est pendant un demi-mille.", "Se diriger en direction du nord pendant un kilomètre."],
+        "1": ["Se diriger en direction du sud-ouest sur 5th Avenue pendant un dixième de mille."],
+        "2": ["Se diriger en direction du sud sur North Prince Street, U.S. 2 22."],
+        "4": ["Conduire en direction de l'est pendant un demi-mille.", "Conduire en direction du nord pendant un kilomètre."],
+        "5": ["Conduire en direction du sud-ouest sur 5th Avenue pendant un dixième de mille."],
+        "6": ["Conduire en direction du sud sur North Prince Street, U.S. 2 22."],
+        "8": ["Marcher en direction de l'est pendant un demi-mille.", "Marcher en direction du nord pendant un kilomètre."],
+        "9": ["Marcher en direction du sud-ouest sur 5th Avenue pendant un dixième de mille."],
+        "10": ["Marcher en direction du sud sur North Prince Street, U.S. 2 22."],
+        "16": ["Rouler en direction de l'est pendant un demi-mille.", "Rouler en direction du nord pendant un kilomètre."],
+        "17": ["Rouler en direction du sud-ouest sur 5th Avenue pendant un dixième de mille."],
+        "18": ["Rouler en direction du sud sur North Prince Street, U.S. 2 22."]
+      }
+    },
+    "destination": {
+      "phrases": {
+        "0": "Vous êtes arrivé à destination.",
+        "1": "Vous êtes arrivés à <DESTINATION>.",
+        "2": "Votre destination est sur <RELATIVE_DIRECTION>.",
+        "3": "<DESTINATION> est sur <RELATIVE_DIRECTION>."
+      },
+      "relative_directions": ["la gauche", "la droite"],
+      "example_phrases": {
+        "0": ["Vous êtes arrivé à destination."],
+        "1": ["Vous êtes arrivés à 3206 Powelton Avenue."],
+        "2": ["Votre destination est sur la gauche.", "Votre destination est sur la droite."],
+        "3": ["Lancaster Brewing Company est sur la gauche."]
+      }
+    },
+    "destination_verbal_alert": {
+      "phrases": {
+        "0": "Vous arriverez à destination.",
+        "1": "Vous arriverez à <DESTINATION>.",
+        "2": "Votre destination sera sur <RELATIVE_DIRECTION>.",
+        "3": "<DESTINATION> sera sur <RELATIVE_DIRECTION>."
+      },
+      "relative_directions": ["la gauche", "la droite"],
+      "example_phrases": {
+        "0": ["Vous arriverez à destination."],
+        "1": ["Vous arriverez à 32 o6 Powelton Avenue."],
+        "2": ["Votre destination sera sur la gauche.", "Votre destination sera sur la droite."],
+        "3": ["Lancaster Brewing Company sera sur la gauche."]
+      }
+    },
+    "destination_verbal": {
+      "phrases": {
+        "0": "Vous êtes arrivé à destination.",
+        "1": "Vous êtes arrivés à <DESTINATION>.",
+        "2": "Votre destination est sur <RELATIVE_DIRECTION>.",
+        "3": "<DESTINATION> est sur <RELATIVE_DIRECTION>."
+      },
+      "relative_directions": ["la gauche", "la droite"],
+      "example_phrases": {
+        "0": ["Vous êtes arrivé à destination."],
+        "1": ["Vous êtes arrivés à 32 o6 Powelton Avenue."],
+        "2": ["Votre destination est sur la gauche.", "Votre destination est sur la droite."],
+        "3": ["Lancaster Brewing Company est sur la gauche."]
+      }
+    },
+    "becomes": {
+      "phrases": {
+        "0": "<PREVIOUS_STREET_NAMES> devient <STREET_NAMES>."
+      },
+      "example_phrases": {
+        "0": ["Vine Street devient Middletown Road."]
+      }
+    },
+    "becomes_verbal": {
+      "phrases": {
+        "0": "<PREVIOUS_STREET_NAMES> devient <STREET_NAMES>."
+      },
+      "example_phrases": {
+        "0": ["Vine Street devient Middletown Road."]
+      }
+    },
+    "continue": {
+      "phrases": {
+        "0": "Continuer.",
+        "1": "Continuer sur <STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Continuer."],
+        "1": ["Continuer sur 10th Avenue."]
+      }
+    },
+    "continue_verbal_alert": {
+      "phrases": {
+        "0": "Continuer.",
+        "1": "Continuer sur <STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Continuer."],
+        "1": ["Continuer sur 10th Avenue."]
+      }
+    },
+    "continue_verbal": {
+      "phrases": {
+        "0": "Continuer pendant <LENGTH>.",
+        "1": "Continuer sur <STREET_NAMES> pendant <LENGTH>."
+      },
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "metric_lengths": ["<KILOMETERS> kilomètres", "un kilomètre", "500 mètres", "<METERS> mètres", "moins de 10 mètres"],
+      "us_customary_lengths": ["<MILES> milles", "un mille", "un demi-mille", "<TENTHS_OF_MILE> dixièmes de mille", "1 dixième de mille", "<FEET> pieds", "moins de dix pieds"],
+      "example_phrases": {
+        "0": ["Continuer pendant 300 pieds."],
+        "1": ["Continuer sur 10th Avenue pendant 3 dixième de mille."]
+      }
+    },
+    "bear": {
+      "phrases": {
+        "0": "Tourner légèrement <RELATIVE_DIRECTION>.",
+        "1": "Tourner légèrement <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Tourner légèrement <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "3": "Tourner légèrement <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Tourner légèrement à droite."],
+        "1": ["Tourner légèrement à gauche sur Arlen Road."],
+        "2": ["Tourner légèrement à droite sur Belair Road/US 1 Business. Continuer sur US 1 Business."],
+        "3": ["Tourner légèrement à gauche pour rester sur US 15 South."]
+      }
+    },
+    "bear_verbal": {
+      "phrases": {
+        "0": "Tourner légèrement <RELATIVE_DIRECTION>.",
+        "1": "Tourner légèrement <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Tourner légèrement <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "3": "Tourner légèrement <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Tourner légèrement à droite."],
+        "1": ["Tourner légèrement à gauche sur Arlen Road."],
+        "2": ["Tourner légèrement à droite sur Belair Road/US 1 Business. Continuer sur US 1 Business."],
+        "3": ["Tourner légèrement à gauche pour rester sur US 15 South."]
+      }
+    },
+    "turn": {
+      "phrases": {
+        "0": "Tourner <RELATIVE_DIRECTION>.",
+        "1": "Tourner <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Tourner <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "3": "Tourner <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Tourner à droite."],
+        "1": ["Tourner à gauche sur Arlen Road."],
+        "2": ["Tourner à droite sur Belair Road/US 1 Business. Continuer sur US 1 Business."],
+        "3": ["Tourner à gauche pour rester sur US 15 South."]
+      }
+    },
+    "turn_verbal": {
+      "phrases": {
+        "0": "Tourner <RELATIVE_DIRECTION>.",
+        "1": "Tourner <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Tourner <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>.",
+        "3": "Tourner <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Tourner à droite."],
+        "1": ["Tourner à gauche sur Arlen Road."],
+        "2": ["Tourner à droite sur Belair Road/US 1 Business."],
+        "3": ["Tourner à gauche pour rester sur US 15 South."]
+      }
+    },
+    "sharp": {
+      "phrases": {
+        "0": "Bifurquer <RELATIVE_DIRECTION>.",
+        "1": "Bifurquer <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Bifurquer <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>. Continuer sur <STREET_NAMES>.",
+        "3": "Bifurquer <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Bifurquer à droite."],
+        "1": ["Bifurquer à gauche sur Arlen Road."],
+        "2": ["Bifurquer à droite sur Belair Road/US 1 Business. Continuer sur US 1 Business."],
+        "3": ["Bifurquer à gauche pour rester sur US 15 South."]
+      }
+    },
+    "sharp_verbal": {
+      "phrases": {
+        "0": "Bifurquer <RELATIVE_DIRECTION>.",
+        "1": "Bifurquer <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Bifurquer <RELATIVE_DIRECTION> sur <BEGIN_STREET_NAMES>.",
+        "3": "Bifurquer <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Bifurquer à droite."],
+        "1": ["Bifurquer à gauche sur Arlen Road."],
+        "2": ["Bifurquer à droite sur Belair Road/US 1 Business."],
+        "3": ["Bifurquer à gauche pour rester sur US 15 South."]
+      }
+    },
+    "uturn": {
+      "phrases": {
+        "0": "Faire un demi-tour <RELATIVE_DIRECTION>.",
+        "1": "Faire un demi-tour <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Faire un demi-tour <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>.",
+        "3": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES>.",
+        "4": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES> sur <STREET_NAMES>.",
+        "5": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Faire un demi-tour à gauche."],
+        "1": ["Faire un demi-tour à droite sur Bunker Hill Road."],
+        "2": ["Faire un demi-tour à gauche pour rester sur Bunker Hill Road."],
+        "3": ["Faire un demi-tour à gauche à Devonshire Road."],
+        "4": ["Faire un demi-tour à gauche à Devonshire Road sur Jonestown Road/US 22."],
+        "5": ["Faire un demi-tour à gauche à Devonshire Road pour rester sur Jonestown Road/US 22."]
+      }
+    },
+    "uturn_verbal": {
+      "phrases": {
+        "0": "Faire un demi-tour <RELATIVE_DIRECTION>.",
+        "1": "Faire un demi-tour <RELATIVE_DIRECTION> sur <STREET_NAMES>.",
+        "2": "Faire un demi-tour <RELATIVE_DIRECTION> pour rester sur <STREET_NAMES>.",
+        "3": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES>.",
+        "4": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES> sur <STREET_NAMES>.",
+        "5": "Faire un demi-tour <RELATIVE_DIRECTION> à <CROSS_STREET_NAMES> pour rester sur <STREET_NAMES>."
+      },
+      "relative_directions": ["à gauche", "à droite"],
+      "empty_street_name_labels": ["la passerelle", "la piste cyclable", "la piste de vtt"],
+      "example_phrases": {
+        "0": ["Faire un demi-tour à gauche."],
+        "1": ["Faire un demi-tour à droite sur Bunker Hill Road."],
+        "2": ["Faire un demi-tour à gauche pour rester sur Bunker Hill Road."],
+        "3": ["Faire un demi-tour à gauche à Devonshire Road."],
+        "4": ["Faire un demi-tour à gauche à Devonshire Road sur Jonestown Road/US 22."],
+        "5": ["Faire un demi-tour à gauche à Devonshire Road pour rester sur Jonestown Road/US 22."]
+      }
+    },
+    "ramp_straight": {
+      "phrases": {
+        "0": "Continuer tout droit pour prendre la bretelle.",
+        "1": "Continuer tout droit pour prendre la bretelle <BRANCH_SIGN>.",
+        "2": "Continuer tout droit pour prendre la bretelle en direction de <TOWARD_SIGN>.",
+        "3": "Continuer tout droit pour prendre la bretelle <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "4": "Continuer tout droit pour prendre la bretelle <NAME_SIGN>."
+      },
+      "example_phrases": {
+        "0": ["Continuer tout droit pour prendre la bretelle."],
+        "1": ["Continuer tout droit pour prendre la bretelle US 322 East."],
+        "2": ["Continuer tout droit pour prendre la bretelle en direction de Hershey."],
+        "3": ["Continuer tout droit pour prendre la bretelle US 322 East/US 422 East/US 522 East/US 622 East en direction de Hershey/Palmdale/Palmyra/Campbelltown."],
+        "4": ["Continuer tout droit pour prendre la bretelle Gettysburg Pike."]
+      }
+    },
+    "ramp_straight_verbal": {
+      "phrases": {
+        "0": "Continuer tout droit pour prendre la bretelle.",
+        "1": "Continuer tout droit pour prendre la bretelle <BRANCH_SIGN>.",
+        "2": "Continuer tout droit pour prendre la bretelle en direction de <TOWARD_SIGN>.",
+        "3": "Continuer tout droit pour prendre la bretelle <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "4": "Continuer tout droit pour prendre la bretelle <NAME_SIGN>."
+      },
+      "example_phrases": {
+        "0": ["Continuer tout droit pour prendre la bretelle."],
+        "1": ["Continuer tout droit pour prendre la bretelle US 322 East."],
+        "2": ["Continuer tout droit pour prendre la bretelle en direction de Hershey."],
+        "3": ["Continuer tout droit pour prendre la bretelle US 322 East/US 422 East/US 522 East/US 622 East en direction de Hershey/Palmdale/Palmyra/Campbelltown."],
+        "4": ["Continuer tout droit pour prendre la bretelle Gettysburg Pike."]
+      }
+    },
+    "ramp": {
+      "phrases": {
+        "0": "Prendre la bretelle sur la <RELATIVE_DIRECTION>.",
+        "1": "Prendre la bretelle <BRANCH_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "2": "Prendre la bretelle sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "3": "Prendre la bretelle <BRANCH_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "4": "Prendre la bretelle <NAME_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "5": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle.",
+        "6": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <BRANCH_SIGN>.",
+        "7": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle en direction de <TOWARD_SIGN>.",
+        "8": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "9": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <NAME_SIGN>."
+      },
+      "relative_directions": ["la gauche", "la droite"],
+      "example_phrases": {
+        "0": ["Prendre la bretelle sur la gauche.", "Prendre la bretelle sur la droite."],
+        "1": ["Prendre la bretelle I 95 sur la droite."],
+        "2": ["Prendre la bretelle sur la gauche en direction de JFK."],
+        "3": ["Prendre la bretelle South Conduit Avenue sur la gauche en direction de JFK."],
+        "4": ["Prendre la bretelle Gettysburg Pike sur la droite."],
+        "5": ["Tourner à gauche pour prendre la bretelle.", "Tourner à droite pour prendre la bretelle."],
+        "6": ["Tourner à gauche pour prendre la bretelle PA 283 West ramp."],
+        "7": ["Tourner à gauche pour prendre la bretelle en direction de Harrisburg/Harrisburg International Airport."],
+        "8": ["Tourner à gauche pour prendre la bretelle PA 283 West en direction de Harrisburg/Harrisburg International Airport."],
+        "9": ["Tourner à droite pour prendre la bretelle Gettysburg Pike ramp."]
+      }
+    },
+    "ramp_verbal": {
+      "phrases": {
+        "0": "Prendre la bretelle sur la <RELATIVE_DIRECTION>.",
+        "1": "Prendre la bretelle <BRANCH_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "2": "Prendre la bretelle sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "3": "Prendre la bretelle <BRANCH_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "4": "Prendre la bretelle <NAME_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "5": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle.",
+        "6": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <BRANCH_SIGN>.",
+        "7": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle en direction de <TOWARD_SIGN>.",
+        "8": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "9": "Tourner à <RELATIVE_DIRECTION> pour prendre la bretelle <NAME_SIGN>."
+      },
+      "relative_directions": ["gauche", "droite"],
+      "example_phrases": {
+        "0": ["Prendre la bretelle sur la gauche.", "Prendre la bretelle sur la droite."],
+        "1": ["Prendre la bretelle I 95 sur la droite."],
+        "2": ["Prendre la bretelle sur la gauche en direction de JFK."],
+        "3": ["Prendre la bretelle South Conduit Avenue sur la gauche en direction de JFK."],
+        "4": ["Prendre la bretelle Gettysburg Pike sur la droite."],
+        "5": ["Tourner à gauche pour prendre la bretelle.", "Tourner à droite pour prendre la bretelle."],
+        "6": ["Tourner à gauche pour prendre la bretelle PA 283 West ramp."],
+        "7": ["Tourner à gauche pour prendre la bretelle en direction de Harrisburg/Harrisburg International Airport."],
+        "8": ["Tourner à gauche pour prendre la bretelle PA 283 West en direction de Harrisburg/Harrisburg International Airport."],
+        "9": ["Tourner à droite pour prendre la bretelle Gettysburg Pike ramp."]
+      }
+    },
+    "exit": {
+      "phrases": {
+        "0": "Prendre la sortie sur la <RELATIVE_DIRECTION>.",
+        "1": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "2": "Prendre la sortie <BRANCH_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "3": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN>.",
+        "4": "Prendre la sortie sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "5": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "6": "Prendre la sortie <BRANCH_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "7": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "8": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "10": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN>.",
+        "12": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "14": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN> en direction de <TOWARD_SIGN>."
+      },
+      "relative_directions": ["gauche", "droite"],
+      "example_phrases": {
+        "0": ["Take the exit on the left.", "Take the exit on the right."],
+        "1": ["Take exit 67 B-A on the right."],
+        "2": ["Take the US 322 West exit on the right."],
+        "3": ["Take exit 67 B-A on the right onto US 322 West."],
+        "4": ["Take the exit on the right toward Lewistown."],
+        "5": ["Take exit 67 B-A on the right toward Lewistown."],
+        "6": ["Take the US 322 West exit on the right toward Lewistown."],
+        "7": ["Take exit 67 B-A on the right onto US 322 West toward Lewistown/State College."],
+        "8": ["Take the White Marsh Boulevard exit on the left."],
+        "10": ["Take the White Marsh Boulevard exit on the left onto MD 43 East."],
+        "12": ["Take the White Marsh Boulevard exit on the left toward White Marsh."],
+        "14": ["Take the White Marsh Boulevard exit on the left onto MD 43 East toward White Marsh."]
+      }
+    },
+    "exit_verbal": {
+      "phrases": {
+        "0": "Prendre la sortie sur la <RELATIVE_DIRECTION>.",
+        "1": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "2": "Prendre la sortie <BRANCH_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "3": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN>.",
+        "4": "Prendre la sortie sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "5": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "6": "Prendre la sortie <BRANCH_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "7": "Prendre la sortie <NUMBER_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN> en direction de <TOWARD_SIGN>.",
+        "8": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION>.",
+        "10": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN>.",
+        "12": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> en direction de <TOWARD_SIGN>.",
+        "14": "Prendre la sortie <NAME_SIGN> sur la <RELATIVE_DIRECTION> sur <BRANCH_SIGN> en direction de <TOWARD_SIGN>."
+      },
+      "relative_directions": ["gauche", "droite"],
+      "example_phrases": {
+        "0": ["Take the exit on the left.", "Take the exit on the right."],
+        "1": ["Take exit 67 B-A on the right."],
+        "2": ["Take the US 322 West exit on the right."],
+        "3": ["Take exit 67 B-A on the right onto US 322 West."],
+        "4": ["Take the exit on the right toward Lewistown."],
+        "5": ["Take exit 67 B-A on the right toward Lewistown."],
+        "6": ["Take the US 322 West exit on the right toward Lewistown."],
+        "7": ["Take exit 67 B-A on the right onto US 322 West toward Lewistown/State College."],
+        "8": ["Take the White Marsh Boulevard exit on the left."],
+        "10": ["Take the White Marsh Boulevard exit on the left onto MD 43 East."],
+        "12": ["Take the White Marsh Boulevard exit on the left toward White Marsh."],
+        "14": ["Take the White Marsh Boulevard exit on the left onto MD 43 East toward White Marsh."]
+      }
+    },
+    "keep": {
+      "phrases": {
+        "0": "Keep <RELATIVE_DIRECTION> at the fork.",
+        "1": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN>.",
+        "2": "Keep <RELATIVE_DIRECTION> to take <STREET_NAMES>.",
+        "3": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> onto <STREET_NAMES>.",
+        "4": "Keep <RELATIVE_DIRECTION> toward <TOWARD_SIGN>.",
+        "5": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> toward <TOWARD_SIGN>.",
+        "6": "Keep <RELATIVE_DIRECTION> to take <STREET_NAMES> toward <TOWARD_SIGN>.",
+        "7": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> onto <STREET_NAMES> toward <TOWARD_SIGN>."
+      },
+      "relative_directions": ["left", "straight", "right"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Keep left at the fork.", "Keep straight at the fork.", "Keep right at the fork."],
+        "1": ["Keep right to take exit 62."],
+        "2": ["Keep right to take I 895 South."],
+        "3": ["Keep right to take exit 62 onto I 895 South."],
+        "4": ["Keep right toward Annapolis."],
+        "5": ["Keep right to take exit 62 toward Annapolis."],
+        "6": ["Keep right to take I 895 South toward Annapolis."],
+        "7": ["Keep right to take exit 62 onto I 895 South toward Annapolis."]
+      }
+    },
+    "keep_verbal": {
+      "phrases": {
+        "0": "Keep <RELATIVE_DIRECTION> at the fork.",
+        "1": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN>.",
+        "2": "Keep <RELATIVE_DIRECTION> to take <STREET_NAMES>.",
+        "3": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> onto <STREET_NAMES>.",
+        "4": "Keep <RELATIVE_DIRECTION> toward <TOWARD_SIGN>.",
+        "5": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> toward <TOWARD_SIGN>.",
+        "6": "Keep <RELATIVE_DIRECTION> to take <STREET_NAMES> toward <TOWARD_SIGN>.",
+        "7": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> onto <STREET_NAMES> toward <TOWARD_SIGN>."
+      },
+      "relative_directions": ["left", "straight", "right"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Keep left at the fork.", "Keep straight at the fork.", "Keep right at the fork."],
+        "1": ["Keep right to take exit 62."],
+        "2": ["Keep right to take Interstate 8 95 South."],
+        "3": ["Keep right to take exit 62 onto Interstate 8 95 South."],
+        "4": ["Keep right toward Annapolis."],
+        "5": ["Keep right to take exit 62 toward Annapolis."],
+        "6": ["Keep right to take Interstate 8 95 South toward Annapolis."],
+        "7": ["Keep right to take exit 62 onto Interstate 8 95 South toward Annapolis."]
+      }
+    },
+    "keep_to_stay_on": {
+      "phrases": {
+        "0": "Keep <RELATIVE_DIRECTION> to stay on <STREET_NAMES>.",
+        "1": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> to stay on <STREET_NAMES>.",
+        "2": "Keep <RELATIVE_DIRECTION> to stay on <STREET_NAMES> toward <TOWARD_SIGN>.",
+        "3": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> to stay on <STREET_NAMES> toward <TOWARD_SIGN>."
+      },
+      "relative_directions": ["left", "straight", "right"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Keep left to stay on I 95 South.", "Keep straight to stay on I 95 South.", "Keep right to stay on I 95 South."],
+        "1": ["Keep left to take exit 62 to stay on I 95 South."],
+        "2": ["Keep left to stay on I 95 South toward Baltimore."],
+        "3": ["Keep left to take exit 62 to stay on I 95 South toward Baltimore."]
+      }
+    },
+    "keep_to_stay_on_verbal": {
+      "phrases": {
+        "0": "Keep <RELATIVE_DIRECTION> to stay on <STREET_NAMES>.",
+        "1": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> to stay on <STREET_NAMES>.",
+        "2": "Keep <RELATIVE_DIRECTION> to stay on <STREET_NAMES> toward <TOWARD_SIGN>.",
+        "3": "Keep <RELATIVE_DIRECTION> to take exit <NUMBER_SIGN> to stay on <STREET_NAMES> toward <TOWARD_SIGN>."
+      },
+      "relative_directions": ["left", "straight", "right"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Keep left to stay on Interstate 95 South.", "Keep straight to stay on Interstate 95 South.", "Keep right to stay on Interstate 95 South."],
+        "1": ["Keep left to take exit 62 to stay on Interstate 95 South."],
+        "2": ["Keep left to stay on I 95 South toward Baltimore."],
+        "3": ["Keep left to take exit 62 to stay on Interstate 95 South toward Baltimore."]
+      }
+    },
+    "merge": {
+      "phrases": {
+        "0": "Merge.",
+        "1": "Merge onto <STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Merge."],
+        "1": ["Merge onto I 76 West/Pennsylvania Turnpike."]
+      }
+    },
+    "merge_verbal": {
+      "phrases": {
+        "0": "Merge.",
+        "1": "Merge onto <STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Merge."],
+        "1": ["Merge onto Interstate 76 West, Pennsylvania Turnpike."]
+      }
+    },
+    "enter_roundabout": {
+      "phrases": {
+        "0": "Enter the roundabout.",
+        "1": "Enter the roundabout and take the <ORDINAL_VALUE> exit."
+      },
+      "ordinal_values": ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"],
+      "example_phrases": {
+        "0": ["Enter the roundabout."],
+        "1": [
+          "Enter the roundabout and take the 1st exit.",
+          "Enter the roundabout and take the 2nd exit.",
+          "Enter the roundabout and take the 3rd exit.",
+          "Enter the roundabout and take the 4th exit.",
+          "Enter the roundabout and take the 5th exit.",
+          "Enter the roundabout and take the 6th exit.",
+          "Enter the roundabout and take the 7th exit.",
+          "Enter the roundabout and take the 8th exit.",
+          "Enter the roundabout and take the 9th exit.",
+          "Enter the roundabout and take the 10th exit."
+        ]
+      }
+    },
+    "enter_roundabout_verbal": {
+      "phrases": {
+        "0": "Enter the roundabout.",
+        "1": "Enter the roundabout and take the <ORDINAL_VALUE> exit."
+      },
+      "ordinal_values": ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th"],
+      "example_phrases": {
+        "0": ["Enter the roundabout."],
+        "1": [
+          "Enter the roundabout and take the 1st exit.",
+          "Enter the roundabout and take the 2nd exit.",
+          "Enter the roundabout and take the 3rd exit.",
+          "Enter the roundabout and take the 4th exit.",
+          "Enter the roundabout and take the 5th exit.",
+          "Enter the roundabout and take the 6th exit.",
+          "Enter the roundabout and take the 7th exit.",
+          "Enter the roundabout and take the 8th exit.",
+          "Enter the roundabout and take the 9th exit.",
+          "Enter the roundabout and take the 10th exit."
+        ]
+      }
+    },
+    "exit_roundabout": {
+      "phrases": {
+        "0": "Exit the roundabout.",
+        "1": "Exit the roundabout onto <STREET_NAMES>.",
+        "2": "Exit the roundabout onto <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Exit the roundabout."],
+        "1": ["Exit the roundabout onto Philadelphia Road/MD 7."],
+        "2": ["Exit the roundabout onto Catoctin Mountain Highway/US 15. Continue on US 15."]
+      }
+    },
+    "exit_roundabout_verbal": {
+      "phrases": {
+        "0": "Exit the roundabout.",
+        "1": "Exit the roundabout onto <STREET_NAMES>.",
+        "2": "Exit the roundabout onto <BEGIN_STREET_NAMES>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Exit the roundabout."],
+        "1": ["Exit the roundabout onto Philadelphia Road, Maryland 7."],
+        "2": ["Exit the roundabout onto Catoctin Mountain Highway, U.S. 15."]
+      }
+    },
+    "enter_ferry": {
+      "phrases": {
+        "0": "Take the Ferry.",
+        "1": "Take the <STREET_NAMES>.",
+        "2": "Take the <STREET_NAMES> <FERRY_LABEL>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "ferry_label": "Ferry",
+      "example_phrases": {
+        "0": ["Take the Ferry."],
+        "1": ["Take the Millersburg Ferry."],
+        "2": ["Take the Bridgeport - Port Jefferson Ferry."]
+      }
+    },
+    "enter_ferry_verbal": {
+      "phrases": {
+        "0": "Take the Ferry.",
+        "1": "Take the <STREET_NAMES>.",
+        "2": "Take the <STREET_NAMES> <FERRY_LABEL>."
+      },
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "ferry_label": "Ferry",
+      "example_phrases": {
+        "0": ["Take the Ferry."],
+        "1": ["Take the Millersburg Ferry."],
+        "2": ["Take the Bridgeport - Port Jefferson Ferry."]
+      }
+    },
+    "exit_ferry": {
+      "phrases": {
+        "0": "Head <CARDINAL_DIRECTION>.",
+        "1": "Head <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "2": "Head <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "4": "Drive <CARDINAL_DIRECTION>.",
+        "5": "Drive <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "6": "Drive <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "8": "Walk <CARDINAL_DIRECTION>.",
+        "9": "Walk <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "10": "Walk <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "16": "Bike <CARDINAL_DIRECTION>.",
+        "17": "Bike <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "18": "Bike <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>."
+      },
+      "cardinal_directions": ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Head southeast."],
+        "1": ["Head west on Ferry Lane"],
+        "2": ["Head south on Summerfield Place/NY 114. Continue on NY 114."],
+        "4": ["Drive southeast."],
+        "5": ["Drive west on Ferry Lane"],
+        "6": ["Drive south on Summerfield Place/NY 114. Continue on NY 114."],
+        "8": ["Walk southeast."],
+        "9": ["Walk west on Ferry Lane"],
+        "10": ["Walk south on Summerfield Place/NY 114. Continue on NY 114."],
+        "16": ["Bike southeast."],
+        "17": ["Bike west on Ferry Lane"],
+        "18": ["Bike south on Summerfield Place/NY 114. Continue on NY 114."]
+      }
+    },
+    "exit_ferry_verbal": {
+      "phrases": {
+        "0": "Head <CARDINAL_DIRECTION>.",
+        "1": "Head <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "2": "Head <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "4": "Drive <CARDINAL_DIRECTION>.",
+        "5": "Drive <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "6": "Drive <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "8": "Walk <CARDINAL_DIRECTION>.",
+        "9": "Walk <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "10": "Walk <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "16": "Bike <CARDINAL_DIRECTION>.",
+        "17": "Bike <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "18": "Bike <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>."
+      },
+      "cardinal_directions": ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Head southeast."],
+        "1": ["Head west on Ferry Lane"],
+        "2": ["Head south on Summerfield Place, New York 1 14."],
+        "4": ["Drive southeast."],
+        "5": ["Drive west on Ferry Lane"],
+        "6": ["Drive south on Summerfield Place, New York 1 14."],
+        "8": ["Walk southeast."],
+        "9": ["Walk west on Ferry Lane"],
+        "10": ["Walk south on Summerfield Place, New York 1 14."],
+        "16": ["Bike southeast."],
+        "17": ["Bike west on Ferry Lane"],
+        "18": ["Bike south on Summerfield Place, New York 1 14."]
+      }
+    },
+    "transit_connection_start": {
+      "phrases": {
+        "0": "Enter the station.",
+        "1": "Enter the <TRANSIT_STOP>.",
+        "2": "Enter the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Enter the station."],
+        "1": ["Enter the Embarcadero Station."],
+        "2": ["Enter the 8 St - NYU Station."]
+      }
+    },
+    "transit_connection_start_verbal": {
+      "phrases": {
+        "0": "Enter the station.",
+        "1": "Enter the <TRANSIT_STOP>.",
+        "2": "Enter the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Enter the station."],
+        "1": ["Enter the Embarcadero Station."],
+        "2": ["Enter the 8 St - NYU Station."]
+      }
+    },
+    "transit_connection_transfer": {
+      "phrases": {
+        "0": "Transfer at the station.",
+        "1": "Transfer at the <TRANSIT_STOP>.",
+        "2": "Transfer at the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Transfer at the station."],
+        "1": ["Transfer at the Embarcadero Station."],
+        "2": ["Transfer at the 8 St - NYU Station."]
+      }
+    },
+    "transit_connection_transfer_verbal": {
+      "phrases": {
+        "0": "Transfer at the station.",
+        "1": "Transfer at the <TRANSIT_STOP>.",
+        "2": "Transfer at the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Transfer at the station."],
+        "1": ["Transfer at the Embarcadero Station."],
+        "2": ["Transfer at the 8 St - NYU Station."]
+      }
+    },
+    "transit_connection_destination": {
+      "phrases": {
+        "0": "Exit the station.",
+        "1": "Exit the <TRANSIT_STOP>.",
+        "2": "Exit the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Exit the station."],
+        "1": ["Exit the Embarcadero Station."],
+        "2": ["Exit the 8 St - NYU Station."]
+      }
+    },
+    "transit_connection_destination_verbal": {
+      "phrases": {
+        "0": "Exit the station.",
+        "1": "Exit the <TRANSIT_STOP>.",
+        "2": "Exit the <TRANSIT_STOP> <STATION_LABEL>."
+      },
+      "station_label": "Station",
+      "example_phrases": {
+        "0": ["Exit the station."],
+        "1": ["Exit the Embarcadero Station."],
+        "2": ["Exit the 8 St - NYU Station."]
+      }
+    },
+    "depart": {
+      "phrases": {
+        "0": "Depart: <TIME>.",
+        "1": "Depart: <TIME> from <TRANSIT_STOP>."
+      },
+      "example_phrases": {
+        "0": ["Depart: 8:02 AM."],
+        "1": ["Depart: 8:02 AM from 8 St - NYU."]
+      }
+    },
+    "depart_verbal": {
+      "phrases": {
+        "0": "Depart at <TIME>.",
+        "1": "Depart at <TIME> from <TRANSIT_STOP>."
+      },
+      "example_phrases": {
+        "0": ["Depart at 8:02 AM."],
+        "1": ["Depart at 8:02 AM from 8 St - NYU."]
+      }
+    },
+    "arrive": {
+      "phrases": {
+        "0": "Arrive: <TIME>.",
+        "1": "Arrive: <TIME> at <TRANSIT_STOP>."
+      },
+      "example_phrases": {
+        "0": ["Arrive: 8:02 AM."],
+        "1": ["Arrive: 8:02 AM at 8 St - NYU."]
+      }
+    },
+    "arrive_verbal": {
+      "phrases": {
+        "0": "Arrive at <TIME>.",
+        "1": "Arrive at <TIME> at <TRANSIT_STOP>."
+      },
+      "example_phrases": {
+        "0": ["Arrive at 8:02 AM."],
+        "1": ["Arrive at 8:02 AM at 8 St - NYU."]
+      }
+    },
+    "transit": {
+      "phrases": {
+        "0": "Take the <TRANSIT_NAME>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)",
+        "1": "Take the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)"
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "transit_stop_count_labels": {"one": "stop", "other": "stops"},
+      "example_phrases": {
+        "0": ["Take the New Haven. (1 stop)", "Take the metro. (2 stops)", "Take the bus. (12 stops)"],
+        "1": ["Take the F toward JAMAICA - 179 ST. (10 stops)", "Take the ferry toward Staten Island. (1 stop)"]
+      }
+    },
+    "transit_verbal": {
+      "phrases": {
+        "0": "Take the <TRANSIT_NAME>.",
+        "1": "Take the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>."
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "example_phrases": {
+        "0": ["Take the New Haven."],
+        "1": ["Take the F toward JAMAICA - 179 ST."]
+      }
+    },
+    "transit_remain_on": {
+      "phrases": {
+        "0": "Remain on the <TRANSIT_NAME>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)",
+        "1": "Remain on the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)"
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "transit_stop_count_labels": {"one": "stop", "other": "stops"},
+      "example_phrases": {
+        "0": ["Remain on the New Haven. (1 stop)", "Remain on the train. (3 stops)"],
+        "1": ["Remain on the F toward JAMAICA - 179 ST. (10 stops)"]
+      }
+    },
+    "transit_remain_on_verbal": {
+      "phrases": {
+        "0": "Remain on the <TRANSIT_NAME>.",
+        "1": "Remain on the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>."
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "example_phrases": {
+        "0": ["Remain on the New Haven."],
+        "1": ["Remain on the F toward JAMAICA - 179 ST."]
+      }
+    },
+    "transit_transfer": {
+      "phrases": {
+        "0": "Transfer to take the <TRANSIT_NAME>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)",
+        "1": "Transfer to take the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>. (<TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>)"
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "transit_stop_count_labels": {"one": "stop", "other": "stops"},
+      "example_phrases": {
+        "0": ["Transfer to take the New Haven. (1 stop)", "Transfer to take the tram. (4 stops)"],
+        "1": ["Transfer to take the F toward JAMAICA - 179 ST. (10 stops)"]
+      }
+    },
+    "transit_transfer_verbal": {
+      "phrases": {
+        "0": "Transfer to take the <TRANSIT_NAME>.",
+        "1": "Transfer to take the <TRANSIT_NAME> toward <TRANSIT_HEADSIGN>."
+      },
+      "empty_transit_name_labels": ["tram", "metro", "train", "bus", "ferry", "cable car", "gondola", "funicular"],
+      "example_phrases": {
+        "0": ["Transfer to take the New Haven."],
+        "1": ["Transfer to take the F toward JAMAICA - 179 ST."]
+      }
+    },
+    "post_transit_connection_destination": {
+      "phrases": {
+        "0": "Head <CARDINAL_DIRECTION>.",
+        "1": "Head <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "2": "Head <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "4": "Drive <CARDINAL_DIRECTION>.",
+        "5": "Drive <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "6": "Drive <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "8": "Walk <CARDINAL_DIRECTION>.",
+        "9": "Walk <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "10": "Walk <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>.",
+        "16": "Bike <CARDINAL_DIRECTION>.",
+        "17": "Bike <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "18": "Bike <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>. Continue on <STREET_NAMES>."
+      },
+      "cardinal_directions": ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Head west."],
+        "1": ["Head northeast on Broadway"],
+        "2": ["Head south on Summerfield Place/NY 114. Continue on NY 114."],
+        "4": ["Drive west."],
+        "5": ["Drive northeast on Broadway"],
+        "6": ["Drive south on Summerfield Place/NY 114. Continue on NY 114."],
+        "8": ["Walk west."],
+        "9": ["Walk northeast on Broadway"],
+        "10": ["Walk south on Summerfield Place/NY 114. Continue on NY 114."],
+        "16": ["Bike west."],
+        "17": ["Bike northeast on Broadway"],
+        "18": ["Bike south on Summerfield Place/NY 114. Continue on NY 114."]
+      }
+    },
+    "post_transit_connection_destination_verbal": {
+      "phrases": {
+        "0": "Head <CARDINAL_DIRECTION>.",
+        "1": "Head <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "2": "Head <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "4": "Drive <CARDINAL_DIRECTION>.",
+        "5": "Drive <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "6": "Drive <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "8": "Walk <CARDINAL_DIRECTION>.",
+        "9": "Walk <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "10": "Walk <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>.",
+        "16": "Bike <CARDINAL_DIRECTION>.",
+        "17": "Bike <CARDINAL_DIRECTION> on <STREET_NAMES>.",
+        "18": "Bike <CARDINAL_DIRECTION> on <BEGIN_STREET_NAMES>."
+      },
+      "cardinal_directions": ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Head west."],
+        "1": ["Head northeast on Broadway"],
+        "2": ["Head south on Summerfield Place, New York 1 14."],
+        "4": ["Drive west."],
+        "5": ["Drive northeast on Broadway"],
+        "6": ["Drive south on Summerfield Place, New York 1 14."],
+        "8": ["Walk west."],
+        "9": ["Walk northeast on Broadway"],
+        "10": ["Walk south on Summerfield Place, New York 1 14."],
+        "16": ["Bike west."],
+        "17": ["Bike northeast on Broadway"],
+        "18": ["Bike south on Summerfield Place, New York 1 14."]
+      }
+    },
+    "post_transition_verbal": {
+      "phrases": {
+        "0": "Continue for <LENGTH>.",
+        "1": "Continue on <STREET_NAMES> for <LENGTH>."
+      },
+      "metric_lengths": ["<KILOMETERS> kilometers", "1 kilometer", "a half kilometer", "<METERS> meters", "less than 10 meters"],
+      "us_customary_lengths": ["<MILES> miles", "1 mile", "a half mile", "<TENTHS_OF_MILE> tenths of a mile", "1 tenth of a mile", "<FEET> feet", "less than 10 feet"],
+      "empty_street_name_labels": ["the walkway", "the cycleway", "the mountain bike trail"],
+      "example_phrases": {
+        "0": ["Continue for 300 feet.", "Continue for 9 miles."],
+        "1": ["Continue on Pennsylvania 7 43 for 6.2 miles.", "Continue on Main Street, Vermont 30 for 1 tenth of a mile."]
+      }
+    },
+    "post_transition_transit_verbal": {
+      "phrases": {
+        "0": "Travel <TRANSIT_STOP_COUNT> <TRANSIT_STOP_COUNT_LABEL>."
+      },
+      "transit_stop_count_labels": {"one": "stop", "other": "stops"},
+      "example_phrases": {
+        "0": ["Travel 1 stop.", "Travel 3 stops."]
+      }
+    },
+    "verbal_multi_cue": {
+      "phrases": {
+        "0": "<CURRENT_VERBAL_CUE> Then <NEXT_VERBAL_CUE>"
+      },
+      "example_phrases": {
+        "0": ["Bear right onto East Fayette Street. Then Turn right onto North Gay Street."]
+      }
+    }
+    
+  }
+}
